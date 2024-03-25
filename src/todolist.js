@@ -29,6 +29,7 @@ btnEnter.addEventListener('click', function() {
     createRadio.setAttribute('id', listArray.length);
     createLabel.setAttribute('for', listArray.length);
 
+    //To get the specified radioId
     const radioID = listArray.length;
 
     createLabel.textContent = input.value;
