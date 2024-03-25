@@ -8,14 +8,23 @@
 </head>
 <body class="font-sans bg-primary min-h-screen flex justify-center items-center ">
     <div class="flex flex-col gap-5">
-        <div>
+        <div class="align-baseline">
     <input type="text" placeholder="Type your list" class="list-input p-3 min-w-[400px] rounded text-xl mr-1 "> 
     <button type="submit" class="btn btn-enter py-3 px-5 bg-lightblue1 text-xl rounded hover:bg-lightblue2 transition-all">Enter</button> </div>
     
-    <div class="list-container hidden min-h-full bg-lightblue1">
+    <h2 class="text-white text-2xl">Tasks for today</h2>
+    <div class="list-container  bg-lightblue1">
         <ul class="flex flex-col list-ul p-3 text-lg">
            
         </ul>
+    </div>
+
+    <h2 class="text-white text-2xl">Completed Tasks</h2>
+    <div class="completed-tasks  list-container  bg-lightblue1"> 
+        <ul class="completed-lists flex-col p-3 text-lg">
+
+        </ul>
+
     </div>
 </div>
 

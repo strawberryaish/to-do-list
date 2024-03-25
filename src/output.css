@@ -602,8 +602,20 @@ video {
   min-height: 100vh;
 }
 
+.min-h-56 {
+  min-height: 14rem;
+}
+
+.min-h-3 {
+  min-height: 0.75rem;
+}
+
 .min-w-\[400px\] {
   min-width: 400px;
+}
+
+.list-none {
+  list-style-type: none;
 }
 
 .flex-col {
@@ -650,6 +662,10 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.align-baseline {
+  vertical-align: baseline;
+}
+
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -662,6 +678,25 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(82 10 189 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.line-through {
+  text-decoration-line: line-through;
 }
 
 .transition-all {

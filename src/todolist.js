@@ -1,22 +1,19 @@
 'use strict';
 
+const listArray = [];
+const arrayList = listArray.length;
+
 const btnEnter = document.querySelector('.btn-enter');
 const input = document.querySelector('.list-input');
 const container = document.querySelector('.list-container');
 const listUl = document.querySelector('.list-ul');
+const completedTasks = document.querySelector('.completed-tasks');
+const completedLists = document.querySelector('.completed-lists');
 
-const listArray = [];
-
-
-
-//creating list inside the existing ul
 
 
 btnEnter.addEventListener('click', function() {
 
-    if (listUl.childElementCount === 0) {
-        container.classList.remove('hidden');
-    }
 
     //creating element 
     const newList = document.createElement('li');
@@ -26,11 +23,14 @@ btnEnter.addEventListener('click', function() {
     
     //Setting attribute
     createRadio.setAttribute('type', 'radio');
-    createRadio.setAttribute('id', listArray.length);
-    createLabel.setAttribute('for', listArray.length);
+    createLabel.setAttribute('for', `radio-${listArray.length}`);
+
+    //setting id (using setAttribute works too)
+    newList.id =`list-${listArray.length}`;
+    createRadio.id = `radio-${listArray.length}`;
 
     //To get the specified radioId
-    const radioID = listArray.length;
+    const arrayID = listArray.length;
 
     createLabel.textContent = input.value;
 
@@ -41,13 +41,41 @@ btnEnter.addEventListener('click', function() {
     newList.appendChild(createLabel);
 
     listArray.push(input.value);
+    
+    // if (listArray === 0) {
+    //     container.classList.remove('hidden');
 
-    console.log(listArray);
+    // }
 
-    //Radio 
-    createRadio.addEventListener('click', function() {
-        console.log(radioID);
+    //Getting the radio button id and setting a variable
+    const specifiedRadio = document.getElementById(`radio-${arrayID}`);
+    const specifiedList = document.getElementById(`list-${arrayID}`);
+
+
+   //removing list by getting the id of radio and list
+    specifiedRadio.addEventListener('click', function() {
+        completedLists.appendChild(specifiedList);
+        specifiedRadio.remove();
+        specifiedList.id = `completedtask-${arrayID}`
+        specifiedList.style.textDecoration = 'line-through';
+
+     
+       //hide the "tasks for today" container if there are no lists
+        if (listUl.childElementCount === 0) {
+            container.classList.add('hidden');
+        }
+
+
+        if (completedLists.childElementCount !== 0)
+        {
+            completedTasks.classList.remove('hidden');
+        }
+        
     })
 
+
+    
 })
+
+
 
